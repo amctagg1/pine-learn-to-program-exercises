@@ -25,7 +25,7 @@ def old_roman_numeral num
                 [1000, 'M']]
   
   (0...numeral_ref.length).reverse_each { |i|
-    if working_num > numeral_ref[i][0]
+    if working_num >= numeral_ref[i][0]
       mult = working_num/numeral_ref[i][0]
       roman_val += numeral_ref[i][1]*(mult)
       working_num %= numeral_ref[i][0]
@@ -35,6 +35,7 @@ def old_roman_numeral num
 end
 
 puts old_roman_numeral 7
+puts old_roman_numeral 500
 puts old_roman_numeral 899
 puts old_roman_numeral 1450
 puts old_roman_numeral 3449
